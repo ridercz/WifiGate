@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12886C69-A35E-435D-8412-3E787AC6B5DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72EEC9E5-7CAC-419C-B894-2A1E8B486294}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WifiGate", "src\WifiGate\WifiGate.xproj", "{7FD8209E-3467-4696-AEAE-A29A29D00A55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD8209E-3467-4696-AEAE-A29A29D00A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD8209E-3467-4696-AEAE-A29A29D00A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD8209E-3467-4696-AEAE-A29A29D00A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD8209E-3467-4696-AEAE-A29A29D00A55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FD8209E-3467-4696-AEAE-A29A29D00A55} = {12886C69-A35E-435D-8412-3E787AC6B5DB}
+	EndGlobalSection
+EndGlobal

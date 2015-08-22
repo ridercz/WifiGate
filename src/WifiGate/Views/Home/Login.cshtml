@@ -1,0 +1,18 @@
+﻿@model WifiGate.Models.LoginModel
+<h1>@Model.ServiceName</h1>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.ServiceName)
+    <p>
+        @Html.LabelFor(x => x.UserName, "Uživatelské jméno / User Name:")<br />
+        @Html.TextBoxFor(x => x.UserName)
+    </p>
+    <p>
+        @Html.LabelFor(x => x.UserName, "Heslo / Password:")<br />
+        @Html.TextBoxFor(x => x.Password, new { type = "password" })
+
+    </p>
+    <footer>
+        <input type="submit" class="button" value="OK" />
+    </footer>
+}
