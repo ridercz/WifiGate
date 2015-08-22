@@ -1,4 +1,27 @@
 ﻿{
+    "ForceHostName": "www.wifigate-login.local",
     "OutputFileName": "wwwroot/passwords.txt",
-    "MaximumPasswordLength": 4
+    "MaximumPasswordLength": 4,
+    "IdentityProviders": [
+        {
+            "Id": "facebook",
+            "Title": "Facebook"
+        },
+        {
+            "Id": "google",
+            "Title": "Google Account"
+        },
+        {
+            "Id": "twitter",
+            "Title": "Twitter"
+        },
+        {
+            "Id": "microsoft",
+            "Title": "Microsoft Account"
+        },
+        {
+            "Id": "seznam",
+            "Title": "Seznam.cz"
+        }
+    ]
 }

@@ -34,15 +34,18 @@ namespace WifiGate {
             }
             else {
                 // Production environment
-                app.Use(async (context, next) => {
-                    var currentHost = context.Request.Host;
-                    if (currentHost.HasValue && currentHost.Value.StartsWith("www.wifigate-login.local", StringComparison.OrdinalIgnoreCase)) {
-                        await next.Invoke();
-                    }
-                    else {
-                        context.Response.Redirect("http://www.wifigate-login.local/");
-                    }
-                });
+                var forceHostName = this.Configuration["ForceHostName"];
+                if (!string.IsNullOrWhiteSpace(forceHostName)) {
+                    app.Use(async (context, next) => {
+                        var currentHost = context.Request.Host;
+                        if (currentHost.HasValue && currentHost.Value.StartsWith(forceHostName, StringComparison.OrdinalIgnoreCase)) {
+                            await next.Invoke();
+                        }
+                        else {
+                            context.Response.Redirect($"http://{forceHostName}/");
+                        }
+                    });
+                }
             }
 
             // Enable static files

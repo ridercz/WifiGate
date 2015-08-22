@@ -1,10 +1,9 @@
-﻿<h1>Wi-Fi Gate</h1>
+﻿@model IEnumerable<WifiGateOptions.ProviderInfo>
+<h1>Wi-Fi Gate</h1>
 <p class="cs">Pro připojení k Internetu se prosím přihlašte pomocí některé z následujících služeb:</p>
 <p class="en">Please login using one of the following services to access Internet:</p>
 <ul class="svclist">
-    <li><a asp-action="Login" asp-route-service="facebook">Facebook</a></li>
-    <li><a asp-action="Login" asp-route-service="twitter">Twitter</a></li>
-    <li><a asp-action="Login" asp-route-service="microsoft">Microsoft</a></li>
-    <li><a asp-action="Login" asp-route-service="google">Google</a></li>
-    <li><a asp-action="Login" asp-route-service="seznam">Seznam.cz</a></li>
+    @foreach (var item in this.Model) {
+        <li><a asp-action="Login" asp-route-service="@item.Id">@item.Title</a></li>
+    }
 </ul>

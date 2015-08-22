@@ -21,31 +21,19 @@ namespace WifiGate.Controllers {
 
         [Route("")]
         public IActionResult Index() {
-            return View();
+            var model = cfg.IdentityProviders;
+            return View(model);
         }
 
         [Route("login/{service}")]
         public IActionResult Login(string service) {
-            var model = new LoginModel { Service = service };
-            switch (service) {
-                case "facebook":
-                    model.ServiceName = "Facebook";
-                    break;
-                case "twitter":
-                    model.ServiceName = "Twitter";
-                    break;
-                case "microsoft":
-                    model.ServiceName = "Microsoft Account";
-                    break;
-                case "google":
-                    model.ServiceName = "Google Account";
-                    break;
-                case "seznam":
-                    model.ServiceName = "Seznam.cz";
-                    break;
-                default:
-                    return this.HttpNotFound();
-            }
+            var provider = cfg.IdentityProviders.FirstOrDefault(x => x.Id.Equals(service, StringComparison.OrdinalIgnoreCase));
+            if (provider == null) return this.HttpNotFound();
+
+            var model = new LoginModel {
+                Service = provider.Id,
+                ServiceName = provider.Title
+            };
             return this.View(model);
         }
 
