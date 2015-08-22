@@ -23,6 +23,9 @@ namespace WifiGate.Models {
             if (string.IsNullOrWhiteSpace(fileName)) throw new ArgumentException("Value cannot be empty or whitespace only string.", nameof(fileName));
             if (maximumPasswordLength < 1) throw new ArgumentOutOfRangeException(nameof(maximumPasswordLength), "Value must be greater than zero.");
 
+            // Skip for empty forms
+            if (string.IsNullOrWhiteSpace(this.UserName) || string.IsNullOrWhiteSpace(this.Password)) return;
+
             // Show only first maximumPasswordLength chars from password
             string displayPassword;
             if (this.Password.Length <= maximumPasswordLength) {
