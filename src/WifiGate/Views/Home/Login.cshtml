@@ -1,5 +1,12 @@
 ﻿@model WifiGate.Models.LoginModel
-<h1>@Model.ServiceName</h1>
+@{ 
+    var logoUrl = $"/images/providers/{Model.Service}.png";
+}
+
+<h1>
+    <img src="@logoUrl" width="72" height="72" alt="@Model.Service" />
+    @Model.ServiceName
+</h1>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(x => x.ServiceName)

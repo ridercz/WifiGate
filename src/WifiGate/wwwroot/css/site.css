@@ -1,1 +1,109 @@
-﻿
+﻿html {
+    background-color: #eee;
+    color: #000;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 1em;
+}
+
+body {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+    body > footer {
+        color: #999;
+        text-align: center;
+        font-size: 80%;
+        border-top: 1px solid #ddd;
+        margin: 1em 0 0 0;
+        padding: 1ex 0 0 0;
+    }
+
+a:link {
+    color: #009;
+}
+
+a:visited {
+    color: #006;
+}
+
+a:hover {
+    color: #06f;
+}
+
+h1 {
+    font-size: 240%;
+    font-weight: 100;
+    background-color: #069;
+    color: #eef;
+    margin: 0;
+    padding: 0;
+    height: 72px;
+    line-height: 72px;
+    padding: 0 1ex;
+}
+
+    h1 img {
+        background-color: #fff;
+        float: left;
+        margin: 0 1ex 0 -1ex;
+    }
+
+p.cs:before {
+    content: url(/images/flag_cs.png);
+    padding-right: 1ex;
+}
+
+p.en:before {
+    content: url(/images/flag_en.png);
+    padding-right: 1ex;
+}
+
+ul.svclist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+    ul.svclist li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: inline;
+    }
+
+form p {
+    line-height: 160%;
+}
+
+input[type=text], input[type=password] {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1ex;
+    border: 2px solid #999;
+    border-radius: 3px;
+}
+
+input[type=submit] {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1ex 3ex;
+    min-width: 18ex;
+    border: 2px solid #069;
+    background-color: #b5d3e1;
+    font-weight: bold;
+    border-radius: 3px;
+}
