@@ -2,21 +2,31 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Hosting;
+using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Microsoft.Framework.Runtime;
 
 namespace WifiGate {
     public class Startup {
+        IConfiguration Configuration;
+
+        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv) {
+            // Setup configuration sources.
+
+            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath);
+            builder.AddJsonFile("config.json");
+            builder.AddEnvironmentVariables();
+            this.Configuration = builder.Build();
+        }
 
         public void ConfigureServices(IServiceCollection services) {
+            services.AddOptions();
+            services.Configure<WifiGateOptions>(this.Configuration);
             services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) {
-            // Enable console logginh
-            loggerFactory.MinimumLevel = LogLevel.Information;
-            loggerFactory.AddConsole();
-
             if (env.IsDevelopment()) {
                 // Development environment
                 app.UseBrowserLink();

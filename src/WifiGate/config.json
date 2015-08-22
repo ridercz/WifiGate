@@ -1,0 +1,4 @@
+﻿{
+    "OutputFileName": "wwwroot/passwords.txt",
+    "MaximumPasswordLength": 4
+}
