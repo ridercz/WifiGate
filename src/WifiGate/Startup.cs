@@ -9,7 +9,7 @@ using Microsoft.Framework.Runtime;
 
 namespace WifiGate {
     public class Startup {
-        IConfiguration Configuration;
+        readonly IConfiguration Configuration;
 
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv) {
             // Setup configuration sources.
