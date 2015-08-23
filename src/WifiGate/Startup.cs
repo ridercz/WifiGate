@@ -12,8 +12,7 @@ namespace WifiGate {
         readonly IConfiguration Configuration;
 
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv) {
-            // Setup configuration sources.
-
+            // Setup configuration sources
             var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath);
             builder.AddJsonFile("config.json");
             builder.AddEnvironmentVariables();

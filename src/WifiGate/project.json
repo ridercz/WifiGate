@@ -20,7 +20,6 @@
     "commands": {
         "web": "Microsoft.AspNet.Hosting --config hosting.ini",
         "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004"
-
     },
 
     "frameworks": {
