@@ -26,12 +26,7 @@ namespace WifiGate {
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) {
-            if (env.IsDevelopment()) {
-                // Development environment
-                app.UseBrowserLink();
-                app.UseErrorPage(ErrorPageOptions.ShowAll);
-            }
-            else {
+            if (!env.IsDevelopment()) {
                 // Production environment
                 var forceHostName = this.Configuration["ForceHostName"];
                 if (!string.IsNullOrWhiteSpace(forceHostName)) {
@@ -46,6 +41,9 @@ namespace WifiGate {
                     });
                 }
             }
+
+            // Handle errors
+            app.UseErrorPage();
 
             // Enable static files
             app.UseStaticFiles();
